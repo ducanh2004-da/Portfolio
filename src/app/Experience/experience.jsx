@@ -3,8 +3,8 @@ import { experiences } from "./data";
 
 export default function Experience() {
   return (
-    <div className="w-full max-w-4xl mx-auto py-10">
-      <h2 className="text-4xl font-extrabold text-blue-700 mb-8 text-center">Work Experience</h2>
+    <div className="w-full max-w-4xl mx-auto py-10" data-aos="fade-up">
+      <h2 className="text-4xl font-extrabold text-blue-700 mb-8 text-center" data-aos="fade-right">Work Experience</h2>
       <div className="space-y-8">
         {experiences.map((exp, idx) => (
           <div key={idx} className="bg-white rounded-2xl shadow-lg p-6 hover:scale-[1.02] transition-transform">

@@ -1,10 +1,12 @@
+import AIProject from '../../assets/AI_Project.jpeg'
+import Edu_Social from '../../assets/EduSocial.jpeg'
 export const projects = [
   {
     title: "WEB EDUSOCIAL",
     description: "Developed Educational Social, an innovative social learning platform designed to facilitate knowledge sharing and collaborative learning.",
     tech: ["HTML5/CSS3", "ExpressJS of NodeJS", "MongoDB"],
     link: "https://edusocial.onrender.com/",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+    image: Edu_Social
   },
   {
     title: "WEB ELECTRONIC NEWSPAPER MANAGEMENT WEBSITE",
@@ -16,8 +18,8 @@ export const projects = [
   {
     title: "WEB LEARNING WITH A.I CHATBOT AND 3D INSTRUCTOR MODEL",
     description: "Developed an advanced learning website integrating AI Chatbot and 3D Instructor Model, delivering an interactive and immersive learning experience.",
-    tech: ["ReactJS,", "NestJS of NodeJS", "PosteSQL"],
+    tech: ["ReactJS", "NestJS of NodeJS", "PosteSQL"],
     link: "https://github.com/ducanh2004-da/Web_AI_3D_Instructor",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+    image: AIProject
   }
 ];
