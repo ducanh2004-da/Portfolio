@@ -15,7 +15,7 @@ export default function Nav() {
                 {
                     navItem.map((item, idx) => (
                         <li key={idx} className={`text-lg font-medium transition-colors duration-200 cursor-pointer drop-shadow px-4 py-2 rounded-lg ${item.style ? "bg-green-400" : "text-black"}`}>
-                            <a href={item.title} className={`${item.style ? "text-white bg-green-400" : "text-black"} hover:text-blue-300`}>
+                            <a href={`#${item.title}`} className={`${item.style ? "text-white bg-green-400" : "text-black"} hover:text-blue-300`}>
                                 {item.title}
                             </a>
                         </li>
