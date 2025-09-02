@@ -1,7 +1,7 @@
 
 
 import React, { useState } from "react";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaInstagram, FaGithub , FaFacebook } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaInstagram, FaGithub, FaFacebook } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 
 export default function Contact() {
@@ -14,8 +14,15 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
-    // Here you would send the form data to your backend or email service
+    fetch("https://formspree.io/f/mrbaalwk", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    })
+      .then((res) => {
+        if (res.ok) setSubmitted(true);
+        else alert("Failed to send message.");
+      });
   }
 
   return (
@@ -100,7 +107,7 @@ export default function Contact() {
             Send Message <span className="text-xl">&#10148;</span>
           </button>
           {submitted && (
-            <div className="text-green-600 font-semibold text-center mt-2">Sorry, the form doesn't currently work now, please contact me via gmail: andott1@gmail.com</div>
+            <div className="text-green-600 font-semibold text-center mt-2">Sent successfully to my gmail: andott1@gmail.com</div>
           )}
         </form>
       </div>

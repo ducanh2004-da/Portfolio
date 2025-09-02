@@ -8,18 +8,18 @@ import { FaArrowDownLong } from "react-icons/fa6";
 export default function Header() {
     // Corrected text array
     const hi = ['H', 'i', 'i', ',', ' ', 'I', "'", 'm', ' ', 'D', 'o', ' ', 'D', 'u', 'c', ' ', 'A', 'n', 'h'];
-    const [hiText, setHiText] = React.useState('');
+    const [hiText, setHi] = React.useState('');
 
-    React.useEffect(() => {
-        let i = 0;
-        setHiText('');
-        const interval = setInterval(() => {
-            setHiText(prev => prev + hi[i]);
+    React.useEffect(()=>{
+        setHi('');
+        var i = 0;
+        var interval = setInterval(()=>{
+            setHi(prev => prev + hi[i]);
             i++;
-            if (i == hi.length - 1) clearInterval(interval);
-        }, 150);
+            if(i === hi.length - 1) clearInterval(interval);
+        },150)
         return () => clearInterval(interval);
-    }, []);
+    },[])
 
     return (
         <div className="flex flex-col items-center justify-center text-center">
