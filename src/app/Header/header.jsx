@@ -17,7 +17,7 @@ export default function Header() {
             setHi(prev => prev + hi[i]);
             i++;
             if(i === hi.length - 1) clearInterval(interval);
-        },150)
+        },120)
         return () => clearInterval(interval);
     },[])
 

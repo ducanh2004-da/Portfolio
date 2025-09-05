@@ -1,27 +1,31 @@
 export const data = {
     title: "Skills & Expertise",
     description: "A comprehensive toolkit for building modern web applications",
-    technical: [
+    skills: [
         {
-            title: "NodeJS",
-            percentage: "95%"
+            title: "Frontend Development",
+            description: "Proficient in building responsive and interactive user interfaces ",
+            items: ["ReactJS", "Angular", "Typescript", "Tailwind CSS", "Bootstrap"]
         },
         {
-            title: "ReactJS",
-            percentage: "90%"
+            title: "Backend Development",
+            description: "Experienced in server-side development and database management",
+            items: ["Express(Node)", "NestJS(Node)", ".Net", "RESTful", "GraphQL"]
         },
         {
-            title: ".Net",
-            percentage: "80%"
+            title: "Database Management",
+            description: "Skilled in designing and managing databases for efficient data storage and retrieval",
+            items: ["MongoDB", "MySQL", "PostgreSQL"]
         },
         {
-            title: "Angular",
-            percentage: "80%"
+            title: "Cloud & DevOps",
+            description: "Familiar with cloud platforms and DevOps practices for scalable application deployment",
+            items: ["AWS", "Docker", "Git", "CI/CD"]
         },
         {
-            title: "Database Design",
-            percentage :"80%"
+            title: "Other Skills",
+            description: "Additional skills that complement my development expertise",
+            items: ["Agile", "Unit Testing", "Figma"]
         }
-    ],
-    technology: ["NestJS(NodeJS)", ".Net", "Angular", "ReactJS", "ExpressJS(Node)", "PostgreSQL", "MongoDB", "AWS", "Docker", "Git", "Tailwind CSS", "MySQL"]
+    ]
 }

@@ -1,38 +1,47 @@
 import React from "react";
 import { data } from "./data";
+import { FaCode, FaTools, FaDatabase, FaReact, FaServer } from "react-icons/fa";
+
+const iconMap = {
+  "Frontend": <FaReact className="text-blue-400 text-3xl mb-2" />,
+  "Backend": <FaServer className="text-green-500 text-3xl mb-2" />,
+  "Database": <FaDatabase className="text-purple-500 text-3xl mb-2" />,
+  "Tools": <FaTools className="text-yellow-500 text-3xl mb-2" />,
+  "Other": <FaCode className="text-pink-500 text-3xl mb-2" />,
+};
+
 export default function Skill() {
     return (
-        <div className="w-full max-w-4xl mx-auto" data-aos="fade-up">
-            <div className="text-5xl font-extrabold mt-10 text-purple-700 mb-4" data-aos="fade-right">{data.title}</div>
-            <div className="mt-2 text-xl text-gray-700 mb-6" data-aos="fade-left">{data.description}</div>
-            <div className="flex flex-col md:flex-row gap-8 mt-8">
-                <div className="flex-1" data-aos="zoom-in">
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800">Technical Proficiency</h2>
-                    <ul className="space-y-6">
-                        {data.technical.map((item, idx) => (
-                            <li key={idx} className="mb-2" data-aos="fade-up" data-aos-delay={idx * 100}>
-                                <div className="flex justify-between mb-1">
-                                    <span className="font-semibold text-gray-700">{item.title}</span>
-                                    <span className="text-gray-500">{item.percentage}</span>
-                                </div>
-                                <div className="w-full bg-gray-200 rounded-full h-3">
-                                    <div className="bg-gradient-to-r from-green-400 to-blue-500 h-3 rounded-full transition-all duration-700" style={{width: item.percentage}}></div>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="flex-1" data-aos="zoom-in">
-                    <h2 className="text-2xl font-bold mb-4 text-gray-800">Technologies & Tools</h2>
-                    <ul className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        {data.technology.map((item, idx) => (
-                            <li key={idx} className="bg-white rounded-lg shadow p-3 text-center font-medium text-gray-700 hover:bg-blue-100 transition-colors cursor-pointer" title={item} data-aos="fade-up" data-aos-delay={idx * 80}>
-                                {item}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+        <div className="w-full max-w-5xl mx-auto" data-aos="fade-up">
+            <div className="text-5xl font-extrabold mt-10 text-purple-700 mb-4 text-center" data-aos="fade-right">{data.title}</div>
+            <div className="mt-2 text-xl text-gray-700 mb-10 text-center" data-aos="fade-left">{data.description}</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-8">
+                {data.skills.map((skill, idx) => (
+                    <div
+                        key={idx}
+                        className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-2xl shadow-xl p-8 hover:scale-[1.03] transition-transform border border-blue-100 flex flex-col items-center"
+                        data-aos="zoom-in"
+                        data-aos-delay={idx * 100}
+                    >
+                        {iconMap[skill.title] || <FaCode className="text-3xl mb-2 text-gray-400" />}
+                        <h3 className="text-2xl font-bold text-gray-800 mb-2">{skill.title}</h3>
+                        <p className="text-gray-600 mb-4 text-center">{skill.description}</p>
+                        <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+                            {skill.items.map((item, idx) => (
+                                <li
+                                    key={idx}
+                                    className="bg-white rounded-lg shadow p-3 text-center font-medium text-gray-700 hover:bg-purple-100 transition-colors cursor-pointer border border-purple-100"
+                                    title={item}
+                                    data-aos="fade-up"
+                                    data-aos-delay={idx * 80}
+                                >
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
             </div>
         </div>
-    )
+    );
 }

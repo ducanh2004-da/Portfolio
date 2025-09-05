@@ -13,7 +13,16 @@ export default function Experience() {
               <div className="text-md text-gray-500">{exp.company}</div>
               <div className="text-md text-gray-400 italic">{exp.period}</div>
             </div>
-            <p className="text-gray-600 mb-3">{exp.description}</p>
+            <p className="text-gray-600 mb-3 text-left">{exp.description}</p>
+            {exp.project && (
+              <p className="text-gray-600 mb-3 text-left">
+                Project:
+                <span>
+
+                  <a href={exp.project} className="text-blue-600 hover:underline ml-1" target="_blank" rel="noopener noreferrer">Link Github Project</a>
+
+                </span>
+              </p>)}
             <div className="flex flex-wrap gap-2">
               {exp.skills.map((skill, i) => (
                 <span key={i} className="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold">{skill}</span>
