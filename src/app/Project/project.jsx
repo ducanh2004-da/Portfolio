@@ -1,5 +1,6 @@
 import React from "react";
 import { projects } from "./data";
+import { OtherProject } from "./otherProject";
 
 
 export default function Project() {
@@ -20,6 +21,21 @@ export default function Project() {
               </div>
               <a href={project.link} className="inline-block bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors font-semibold">View Project</a>
             </div>
+          </div>
+        ))}
+      </div>
+      <div className="otherProject">
+        <h3 className="text-2xl font-extrabold text-pink-700 mb-8 mt-20 text-center" data-aos="fade-right">Other Projects To Learn New Technology</h3>
+        {OtherProject.map((project, idx) => (
+          <div key={idx} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform mt-8 p-6">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">{project.title}</h3>
+            <p className="text-gray-600 mb-4">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mb-4 m-auto justify-center">
+              {project.tech.map((tech, i) => (
+                <span key={i} className="bg-pink-100 text-pink-700 px-2 py-1 rounded text-xs font-semibold">{tech}</span>
+              ))}
+            </div>
+            <a href={project.link} className="inline-block bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors font-semibold">View Project</a>
           </div>
         ))}
       </div>

@@ -8,7 +8,7 @@ export const experiences = [
   },
   {
     role: "FCJ member in AWS",
-    company: "AMAZON WEB SERVICES VIỆT NAM",
+    company: "AMAZON WEB SERVICES VIET NAM",
     period: "15/04/2025 - 15/07/2025",
     description: "Participated in the AWS FCJ program, learn and apply AWS services to build and deploy cloud-based applications (backend: NestJS, frontend: ReactJS, database: PostgreSQL).",
     skills: ["AWS", "Cloud Computing", "DevOps"],
